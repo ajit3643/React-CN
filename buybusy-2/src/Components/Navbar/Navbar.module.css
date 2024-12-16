@@ -1,0 +1,117 @@
+.nav{
+    width: 100vw;
+    background-color: rgb(74, 21, 173);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.wrapper {
+    min-width: 80%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.logo h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-wrap: nowrap;
+    color: rgba(255, 255, 255, 0.4);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-decoration: none;
+}
+
+.btn:hover, .btn:enabled {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #ffffff80);
+}
+
+.btn:active {
+    scale: 0.9;
+}
+
+.img {
+    width: 35px;
+    height: 35px;
+}
+
+.text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+.profile{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile img{
+    width: 45px;
+    height: 45px;
+}
+@media (max-width: 500px){
+    .logo img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .logo h4{
+        display: none;
+        /* font-size: 1rem;
+        -webkit-text-stroke-width: 0px;
+    color: #fff; */
+    }
+    .buttons{
+        gap: 0.4rem;
+    }
+    .img{
+        width: 20px;
+        height: 20px;
+    }
+    .text{
+        font-size: 0.5rem;
+    }
+
+}

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@800&display=swap');
+/* main container */
+.main{
+    width: 500px;
+    height: 835px;
+    overflow: hidden;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px black;
+    position: relative;
+    margin-top: 10vw;
+}
+/* toggle styling */
+.toggle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+}
+.toggle:nth-child(1){
+    background-color: red;
+    left: 20px;
+}
+.toggle:nth-child(2){
+    background-color: yellow;
+    left: 60px;
+}
+.toggle:nth-child(3){
+    background-color: green;
+    left: 100px;
+}
+/* calculator styling */
+.title{
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    margin-top: 0;
+    color: #ff4500;
+    text-transform: uppercase;
+    font-family: 'Martian Mono', monospace;
+}
+/* screen container styling */
+.inputCont{
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+}
+/* inputbox styling  */
+.inputCont input{
+    width: 430px;
+    font-size: 50px;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    text-align: right;
+}
+/* buttons container styling */
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(125px, auto);
+    gap: 1px;
+}
+/* button styling */
+.keypad button{
+    font-size: 50px;
+    font-weight: 600;
+    transition: all 0.8s linear;
+}
+.keypad button:active{
+    transform: scale(0.80);
+}
+/* backspace button styling */
+.keypad button img{
+    width: 50px;
+}
+/* zero button styling */
+.zero{
+    grid-column: 1/3;
+}
+/* operator button styling */
+.operator{
+    background-color: #ff4500;
+    color: #fff;
+}
+/* responsive on small device */
+/* more than small device is also similar like bigger device */
+@media (max-width: 500px){
+    .main{
+        width: 100vw;
+        box-shadow: none;
+        border-radius: 0%;
+        height: 790px;
+    }
+    .toggle{
+        display: none;
+    }
+    .title {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .inputCont {
+        margin-top: 20px;
+    }
+    .inputCont input {
+        width: 90%;
+        font-size: 40px;
+    }
+    .keypad button {
+        font-size: 40px;
+    }
+}

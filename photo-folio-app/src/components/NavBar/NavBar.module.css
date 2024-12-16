@@ -1,0 +1,32 @@
+.header{
+    width: 100vw;
+    height: 100%;
+    background-color: #22A699;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header img{
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.header span{
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    text-shadow: 2px 0px 0px #fff, -1px 0px 0px #fff, 0px 1px 0px #fff, 0px -1px 0px #fff;
+}
+@media (max-width: 480px) {
+    .header img{
+        width: 30px;
+        height: 30px;
+    }
+}

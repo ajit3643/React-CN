@@ -1,0 +1,14 @@
+
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.notecontent{
+    width: 60%;
+}
+
+.button{
+    height: fit-content;
+}

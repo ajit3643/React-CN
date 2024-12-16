@@ -1,0 +1,105 @@
+.header{
+    display: flex;
+    align-items: center;
+    padding: 30px 20px;
+}
+.header img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 4px dashed #fff;
+}
+.header p{
+    margin-left: 35px;
+    font-size: 35px;
+    color: #fff;
+    font-family: cursive;
+}
+
+.newConservation{
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+}
+.newConservation p{
+    font-size: 20px;
+}
+
+.newConservation .fas{
+    cursor: pointer;
+    padding: 8px;
+    font-size: 30px;
+}
+.contact-tab{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 10px 15px;
+    margin-top: 15px;
+}
+.avatar{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+.contactText{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #222;
+    width: auto;
+}
+.contactText p{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+.newConservationTab{
+    position: fixed;
+    right: 10px;
+    bottom: 10%;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    overflow-y: scroll;
+    border: 2px solid #fff;
+    z-index: 4;
+}
+.newConsTabHeader{
+    width: 400px;
+    background-color: green;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 0;
+    font-size: 25px;
+    border-radius: 5px;
+    position: fixed;
+}
+.newConsList{
+    margin-top: 90px;
+}
+@media screen and (max-width: 1200px) {
+    .newConservationTab {
+      width: 300px;
+    }
+    .newConsTabHeader{
+        width: 300px;
+        font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 792px) {
+    .newConservationTab {
+      top: 100px;
+      right: 30%;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .newConservationTab {
+      top: 100px;
+      right: 20%;
+    }
+  }

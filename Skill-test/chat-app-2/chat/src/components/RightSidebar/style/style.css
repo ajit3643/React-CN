@@ -1,0 +1,150 @@
+.messageBox{
+    height: 95vh;
+    overflow: auto;
+}
+.messageBoxHeader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+    background-color: green;
+    border-bottom: 2px solid #ddd;
+}
+.NoMessageAlert{
+    color: #222;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 35%;
+}
+@media screen and (max-width: 622px) {
+    .NoMessageAlert {
+      font-size: 14px;
+    }
+  }
+.messageSection{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px 40px;
+}
+.messageBubble{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: green;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 25px;
+}
+.messRight{
+    flex-direction: row-reverse;
+    margin-left: 50%;
+    position: relative;
+}
+.messRight::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid green;
+    border-bottom: 20px solid transparent;
+    border-bottom-left-radius: 10px;
+    left: 90%;
+    top: 100%;
+}
+@media screen and (max-width: 792px) {
+    .messRight {
+      width: 200px;
+      padding: 6px;
+      margin: 10px 0;
+    }
+  }
+.messLeft{
+    position: relative;
+}
+.messLeft::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid green;
+    border-bottom: 20px solid transparent;
+    border-bottom-left-radius: 10px;
+    left: 10%;
+    top: 100%;
+}
+@media screen and (max-width: 792px) {
+    .messLeft {
+      width: 200px;
+      padding: 6px;
+      margin: 10px 0;
+    }
+    .name {
+      font-size: 12px;
+    }
+    .message {
+      font-size: 13px;
+    }
+  }
+.name{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+.message{
+    font-size: 18px;
+    font-weight: 400;
+    color: #ddd;
+}
+@media screen and (max-width: 622px) {
+    .message {
+      font-size: 12px;
+    }
+  }
+.messageTime{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #222;
+}
+.messageInput{
+    background-color: #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.messageInput input{
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 20px;
+}
+.sendButton{
+    padding: 10px;
+    width: 20%;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 20px;
+}
+@media screen and (max-width: 792px) {
+    .sendButton {
+      font-size: 12px;
+      width: 40%;
+    }
+  }
+.NoConsevation{
+    margin: 50% auto;
+    text-align: center;
+    width: fit-content;
+}

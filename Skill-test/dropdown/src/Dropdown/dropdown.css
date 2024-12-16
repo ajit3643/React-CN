@@ -1,0 +1,30 @@
+.Body {
+  text-align: center;
+}
+
+select {
+
+  margin-top: 2%;
+  height: 80px;
+  width: 450px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 5px 8px rgb(95, 95, 93);
+  border: 2px solid black;
+  font-size: x-large;
+  font-weight: 900;
+  background: #fff;
+
+}
+
+select:hover{
+  
+}
+
+
+option{
+    font-weight: bolder;
+    background: black;
+    color: #fff;
+}
+

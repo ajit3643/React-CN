@@ -1,0 +1,108 @@
+.main{
+    width: 80%;
+    margin: 20px auto;
+    padding: 1% 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+.main h2{
+    font-size: 30px;
+    color: #22A699;
+}
+
+.main button{
+    border: 3px solid #22A699;
+    outline: none;
+    color: #22A699;
+    font-weight: 600;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.main .cancel{
+    border: 3px solid red;
+    color: red;
+}
+.main button:hover{
+    color: #fff;
+    background-color: #22A699;
+}
+
+.lists{
+    width: 80%;
+    margin: 0 auto;
+    padding: 3% 3%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+.lists div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #22A699;
+    padding: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s linear;
+}
+.icon{
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+.lists div span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 5px;
+}
+.delete{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 3px 8px;
+    border-bottom-left-radius: 5px;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.lists div:hover .delete{
+    display: block;
+}
+.lists div:hover {
+    transform: translateY(-10px);
+}
+@media (max-width: 480px) {
+    .main{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .main h2{
+        margin-bottom: 10px;
+    }
+    .main button{
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .lists div{
+        flex-grow: 1;
+    }
+}
