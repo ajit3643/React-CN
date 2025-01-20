@@ -11,7 +11,7 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>CMT App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -26,68 +26,88 @@
       const GnameRef = React.createRef();
       const GnumberRef = React.createRef();
 
-      
       // Create form submit handler here
-      function timeformat(){
+      function timeformat() {
         var date = new Date();
         var hour = date.getHours();
         var minute = date.getMinutes();
         var second = date.getSeconds();
-        var meridian = (hour<12)?"AM":"PM";
-        return `${(hour<12)?hour:hour-12}:${minute}:${second} ${meridian}`;
+        var meridian = hour < 12 ? "AM" : "PM";
+        return `${
+          hour < 12 ? hour : hour - 12
+        }:${minute}:${second} ${meridian}`;
       }
 
       const clearInputs = () => {
         GcountRef.current.value = "";
         GnameRef.current.value = "";
         GnumberRef.current.value = "";
-      }
-      function servehandler(e){
-        const index = e.target.parentNode.parentNode.rowIndex-1;
-        if(!customers[index].served){
+      };
+      function servehandler(e) {
+        const index = e.target.parentNode.parentNode.rowIndex - 1;
+        if (!customers[index].served) {
           customers[index].served = true;
           customers[index].Outdate = timeformat();
-          rootElement.render(<App />);
+        } else{
+          alert("Customer already checked out");
         }
+        rootElement.render(<App />);
       }
 
-      function removehandler(e){
-        const index = e.target.parentNode.parentNode.rowIndex-1;
-        if(customers[index].served){
+      function removehandler(e) {
+        const index = e.target.parentNode.parentNode.rowIndex - 1;
+        if (customers[index].served) {
+          seatsLeft += parseInt(customers[index].Gcount);
           customers.splice(index, 1);
-          seatsLeft++;
-          rootElement.render(<App />);
+        }else {
+          alert("Please check out the customer first");
         }
+        rootElement.render(<App />);
       }
 
-      function handleSubmit(e){
-        e.preventDefault()
-        if(seatsLeft>0){
-          customers.push(
-            {
-              Gcount: GcountRef.current.value,
-              Gname: GnameRef.current.value,
-              Gnumber: GnumberRef.current.value,
-              Indate: timeformat(),
-              Outdate: "-",
-              served: false
-            }
-          );
-          seatsLeft--;
+      function handleSubmit(e) {
+        e.preventDefault();
+        if(GcountRef.current.value === "" || GnameRef.current.value === "" || GnumberRef.current.value === ""){
+          alert("Please fill all the fields");
+          return;
+        }
+        if (GcountRef.current.value <= seatsLeft) {
+          customers.push({
+            Gcount: GcountRef.current.value,
+            Gname: GnameRef.current.value,
+            Gnumber: GnumberRef.current.value,
+            Indate: timeformat(),
+            Outdate: "-",
+            served: false,
+          });
+          seatsLeft -= GcountRef.current.value;
           clearInputs();
-          rootElement.render(<App />);
+        } else {
+          alert("Guest count exceeds capacity.");
         }
+        rootElement.render(<App />);
       }
-
 
       const Form = () => (
         <form onSubmit={handleSubmit}>
-            <div><input type="number" placeholder="Guest Count" ref={GcountRef}/></div>
-            <div><input type="text" placeholder="Primary Guest Name" ref={GnameRef}/></div>
-            <div><input type="tel" placeholder="Phone Number" ref={GnumberRef}/></div>
-            <div><button>Add Entry</button></div>
+          <div>
+            <input type="number" placeholder="Guest Count" ref={GcountRef} />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Primary Guest Name"
+              ref={GnameRef}
+            />
+          </div>
+          <div>
+            <input type="tel" placeholder="Phone Number" ref={GnumberRef} />
+          </div>
+          <div>
+            <button>Add Entry</button>
+          </div>
         </form>
-      )
+      );
 
       const App = () => (
         <div className="App" style={{ textAlign: "center" }}>
@@ -95,8 +115,8 @@
             <h2>Total Capacity: {capacity}</h2>
             <h2>Seats Left: {seatsLeft}</h2>
           </div>
-          <Form/>
-          
+          <Form />
+
           <table border="1px" style={{ margin: "auto" }}>
             <thead>
               <tr>
@@ -117,10 +137,18 @@
                   <td>{d.Gnumber}</td>
                   <td>{d.Indate}</td>
                   <td>{d.Outdate}</td>
-                  <td>{(d.served)?"searved":<button onClick={servehandler}>Click to check out</button>}</td>
-                <td><button onClick={removehandler}>Remove</button></td>
-              </tr>
-              ))}              
+                  <td>
+                    {d.served ? (
+                      "searved"
+                    ) : (
+                      <button onClick={servehandler}>Click to check out</button>
+                    )}
+                  </td>
+                  <td>
+                    <button onClick={removehandler}>Remove</button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -129,6 +157,5 @@
       const rootElement = ReactDOM.createRoot(document.getElementById("root"));
       rootElement.render(<App />);
     </script>
-
   </body>
 </html>

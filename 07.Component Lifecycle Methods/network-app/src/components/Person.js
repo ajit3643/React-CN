@@ -4,7 +4,7 @@ class Person extends Component {
   // Define appropriate lifecycle method to show alert here
   componentWillUnmount() {
     const {email} = this.props.person;
-    alert(`A person with email ${email} was removed from your Network!`);
+    alert(`A person with email ${email} was removed from your network`);
   }
   render() {
     const { img, email } = this.props.person;
